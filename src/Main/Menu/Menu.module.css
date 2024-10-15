@@ -1,0 +1,21 @@
+.Menu{
+    width: 100vw;
+    height: 8vh;
+    /*border: 1px solid red;*/
+    position: absolute;
+    bottom: 4vh;
+    display: grid;
+    justify-content: center;
+    /*align-content: center;*/
+}
+.Options{
+    width: 65vw;
+    height: 100%;
+    background-color: #232323;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.Options div{
+    border: 1px solid green;
+}
