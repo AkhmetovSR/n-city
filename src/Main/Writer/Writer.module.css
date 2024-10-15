@@ -1,9 +1,15 @@
+.Main{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
 .Writer{
     text-align: start;
 }
 .HelloText{
     /*padding: 10px;*/
-    padding-left: 10px;
+    padding-left: 15px;
     color: #646464;
     /*color: #FFA800;*/
     /*font-weight: bold;*/

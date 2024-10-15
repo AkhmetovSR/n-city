@@ -31,3 +31,8 @@
 .searchImg{
   width: 80%;
 }
+.Sun{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
