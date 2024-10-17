@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: #171717;
   position: absolute;
+  overflow: hidden;
 }
 .Search{
   width: 80vw;
@@ -35,4 +36,7 @@
   position: absolute;
   right: 10px;
   top: 10px;
+  display: grid;
+  justify-content: center;
+  /*border: 1px solid red;*/
 }

@@ -1,0 +1,18 @@
+.SearchBoard{
+    width: 100vw;
+    height: 100vh;
+    background-color: #646464;
+    position: relative;
+    /*bottom: 0;*/
+}
+.SearchLine{
+    width: 80%;
+    height: 40px;
+    background-color: #61dafb;
+    border-radius: 20px;
+    border: 0;
+    position: absolute;
+    left: 10vw;
+    top: 40px;
+    /*outline: none;*/
+}
