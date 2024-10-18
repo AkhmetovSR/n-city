@@ -1,3 +1,10 @@
+.M{
+  width: 100vw;
+  height: 100vh;
+  background-color: #171717;
+  position: absolute;
+  overflow: hidden;
+}
 .Main {
   width: 100vw;
   height: 100vh;

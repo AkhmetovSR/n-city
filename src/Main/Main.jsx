@@ -13,30 +13,35 @@ function Main() {
     const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
 
     //-------------------------------------------------------------------------------------------------------------------------
-    const [isVisible, setIsVisible] = useState(false);
-    const [open, setOpen] = useState();
+    const [scale, setScale] = useState(1);
+    const [display, setDisplay] = useState("none");
     function openSearchBoard(){
-        setIsVisible(!isVisible);
-        setOpen(0)
+        setScale(0.8);
+        setDisplay("block")
     }
     function closeSearchBoard(){
-        setIsVisible(!isVisible);
-        setOpen(1000)
+        setScale(1);
+        setDisplay("none")
     }
 
   return (
-    <div className={s.Main}>
-        <motion.div className={s.Sun} style={{rotate}}><img src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
-        <div className={s.Search} onTouchStart={openSearchBoard}>
-            {/*<div className={s.SearchText}><Writer/></div>*/}
-            <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>
-        </div>
-        {/*<Menu/>*/}
-        <SearchBoard isVisible={isVisible} param={open} func={closeSearchBoard}/>
-    </div>
+      <div className={s.M}>
+          <motion.div className={s.Main} initial={{y: 0, scale: 1}} animate={{scale: scale}}>
+              <motion.div className={s.Sun} style={{rotate}}><img src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
+              <div className={s.Search} onTouchStart={openSearchBoard}>
+                  {/*<div className={s.SearchText}><Writer/></div>*/}
+                  <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>
+              </div>
+              {/*<Menu/>*/}
+          </motion.div>
+          <SearchBoard display={display} scale={scale} func={closeSearchBoard}/>
+      </div>
   );
 }
-
 export default Main;
 
 //($env:HTTPS = "true") -and (npm start)
+
+// const [isVisible, setIsVisible] = useState(false);
+// setIsVisible(!isVisible);
+// setIsVisible(!isVisible);
