@@ -8,7 +8,10 @@ import { inView } from "framer-motion"
 function SearchBoard(props) {
     const element = document.getElementById("search")
     inView(element, () => {
-        document.getElementById("search").click()
+        if (props.display === "display"){
+            element.click()
+        }
+        // document.getElementById("search").click()
     })
 
     return (
