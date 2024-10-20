@@ -18,11 +18,20 @@
 }
 .Widget{
     display: grid;
-    align-items: center;
-    justify-items: center;
+    align-items: end;
+    justify-content: center;
     /*width: 27vw;*/
     /*height: 27vw;*/
 }
 .WdgImage{
-    width: 80%;
+    width: 100%;
+    border-radius: 15px;
+}
+.Footer{
+    background-color: #171717;
+    position: absolute;
+    /*bottom: 10px;*/
+    /*border: 1px solid red;*/
+    width: auto;
+    color: white;
 }
