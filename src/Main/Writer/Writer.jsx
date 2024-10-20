@@ -5,7 +5,7 @@ import s from "./Writer.module.css"
 function Writer () {
     const [text] = useTypewriter({
             words: ['Начните поиск здесь...', "Адвокаты...", "Салоны красоты...", "И многое другое..."],
-            loop: 1,
+            loop: 10,
             typeSpeed: 50,
             deleteSpeed: 20
         }

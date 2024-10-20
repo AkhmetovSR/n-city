@@ -4,6 +4,8 @@ import Sun from "../resource/sun.webp";
 import Writer from "./Writer/Writer.jsx";
 import Menu from "./Menu/Menu.jsx";
 import SearchBoard from "./SearchBoard/SearchBoard.jsx";
+import Widget from "./Widget/Widget.jsx";
+import Carousel from "./Carousel/Carousel.jsx"
 import {useState} from "react";
 import { motion, useTime, useTransform } from "framer-motion";
 
@@ -27,12 +29,18 @@ function Main() {
   return (
       <div className={s.M}>
           <motion.div className={s.Main} initial={{y: 0, scale: 1}} animate={{scale: scale}}>
+              <Carousel/>
+              <div className={s.TitleAll}>
+                  <div className={s.TitleCity}>НЯГАНЬ</div>
+                  <div className={s.SearchAll}>#НАЙДЕТСЯВСЕ</div>
+              </div>
               <motion.div className={s.Sun} style={{rotate}}><img src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
               <div className={s.Search} onTouchStart={openSearchBoard}>
-                  {/*<div className={s.SearchText}><Writer/></div>*/}
+                  <div className={s.SearchText}><Writer/></div>
                   <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>
               </div>
-              {/*<Menu/>*/}
+              <Widget/>
+              <Menu/>
           </motion.div>
           <SearchBoard display={display} scale={scale} func={closeSearchBoard}/>
       </div>

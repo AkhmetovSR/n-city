@@ -8,10 +8,9 @@ import { inView } from "framer-motion"
 function SearchBoard(props) {
     const element = document.getElementById("search")
     inView(element, () => {
-        if (props.display === "display"){
-            element.click()
+        if (props.display === "block"){
+            setTimeout(() => {element.focus()}, 110)
         }
-        // document.getElementById("search").click()
     })
 
     return (
@@ -19,7 +18,7 @@ function SearchBoard(props) {
                     initial={{display: props.display, scale: props.scale - 0.2}}
                     animate={{display: props.display, scale: props.scale + 0.2}}
                     transition={{duration: 0.1}}>
-            <div><button onClick={props.func}></button></div>
+            <div className={s.Close} onClick={props.func}></div>
             <input id="search" className={s.SearchLine}/>
         </motion.div>
     );
