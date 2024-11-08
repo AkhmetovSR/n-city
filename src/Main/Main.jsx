@@ -12,7 +12,7 @@ import { motion, useTime, useTransform } from "framer-motion";
 function Main() {
     //------------------------------------------Вращение солнышка--------------------------------------------------------------
     const time = useTime();
-    const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
+    const rotate = useTransform(time, [0, 15000], [0, 760], { clamp: false });
 
     //-------------------------------------------------------------------------------------------------------------------------
     const [scale, setScale] = useState(1);
@@ -34,7 +34,7 @@ function Main() {
                   <div className={s.TitleCity}>НЯГАНЬ</div>
                   <div className={s.SearchAll}>#НАЙДЕТСЯВСЕ</div>
               </div>
-              <motion.div className={s.Sun} style={{rotate}}><img src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
+              <motion.div className={s.Sun} style={{rotate}}><img className={s.sunImg} src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
               <div className={s.Search} onTouchStart={openSearchBoard}>
                   <div className={s.SearchText}><Writer/></div>
                   <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>

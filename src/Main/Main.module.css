@@ -79,6 +79,10 @@
   right: 10px;
   top: 10px;
   display: grid;
-  justify-content: center;
+  justify-items: center;
   /*border: 1px solid red;*/
+  /*width: 40%;*/
+}
+.sunImg{
+  width: 24px;
 }

@@ -16,7 +16,7 @@ function Menu() {
     ]
     function vibration(){
         if (window.navigator && window.navigator.vibrate) {
-            window.navigator.vibrate(5)
+            window.navigator.vibrate(10)
         }
     }
     const Sections = section.map(section =>
