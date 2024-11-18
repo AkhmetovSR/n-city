@@ -27,14 +27,18 @@ function SearchBoard(props) {
         {id: 14, word: "автомобиль", link: ""},
         {id: 15, word: "автомобиль", link: ""},
     ];
-
+    const [num, setNum] = useState(0)
     const [symbol, setSymbol] = useState('');
     const filteredSearch = wordList.filter(word => {
         return word.word.toLowerCase().includes(symbol.toLowerCase())
     })
     const finder = filteredSearch.map(word =>
-            <motion.div key={word.id} className={s.Find} animate={{scale:1}}>{word.word}</motion.div>
+            <motion.div key={word.id} id={word.id} className={s.Find} onClick={openClick} animate={num === word.id ? {width: 300, zIndex:1, height: 500, position: "fixed", top: 0} : {scale:1, zIndex:0, position: "relative"}}>{word.word}</motion.div>
     )
+
+    function openClick(elem){
+        setNum(Number(elem.target.id))
+    }
 
     return (
         <motion.div className={s.SearchBoard}
