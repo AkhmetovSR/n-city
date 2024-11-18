@@ -28,7 +28,7 @@ function Main() {
 
   return (
       <div className={s.M}>
-          <motion.div className={s.Main} initial={{y: 0, scale: 1}} animate={{scale: scale}}>
+          <motion.div className={s.Main} animate={{scale: scale}} transition={{ type: "spring", bounce: 0, duration: 0.1 }}>
               <Carousel/>
               <div className={s.TitleAll}>
                   <div className={s.TitleCity}>НЯГАНЬ</div>

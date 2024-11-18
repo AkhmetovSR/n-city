@@ -33,7 +33,7 @@ function SearchBoard(props) {
         return word.word.toLowerCase().includes(symbol.toLowerCase())
     })
     const finder = filteredSearch.map(word =>
-            <motion.div key={word.id} className={s.Find} initial={{scale:0.8, opacity:80}} animate={{scale:1, opacity:100}}>{word.word}</motion.div>
+            <motion.div key={word.id} className={s.Find} animate={{scale:1}}>{word.word}</motion.div>
     )
 
     return (
