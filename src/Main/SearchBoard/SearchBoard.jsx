@@ -4,42 +4,37 @@ import { inView } from "framer-motion"
 import {useState} from "react";
 
 function SearchBoard(props) {
-    const element = document.getElementById("search");
-    inView(element, () => {
+    const searchLine = document.getElementById("search");
+    inView(searchLine, () => {
         if (props.display === "block"){
-            setTimeout(() => {element.focus()}, 110)
+            setTimeout(() => {searchLine.focus()}, 110)
         }
     });
 
-    // 1. Сначала подгружаем массив слов
-    // 2. Дальше нужно идти по каждой строке, делить ее на массив и сравнивать букву с буквой слова (при этом вторая введенная буква должна начинать
-    // сравнивать со второго символа и т.д.)
-    // 3. После равенства сразу рендерить подходящие слова внизу поиска
-
     const wordList = [
         {id: 1, word: "Автосервис", link: ""},
-        // {id: 2, word: "авторизация", link: ""},
-        // {id: 3, word: "автоэмаль", link: ""},
-        // {id: 4, word: "автоцарапина", link: ""},
-        // {id: 5, word: "автодром", link: ""},
-        // {id: 6, word: "автомобиль", link: ""},
+        {id: 2, word: "авторизация", link: ""},
+        {id: 3, word: "Клининг", link: ""},
+        {id: 4, word: "Магазин", link: ""},
+        {id: 5, word: "автодром", link: ""},
+        {id: 6, word: "автомобиль", link: ""},
+        {id: 7, word: "автомобиль", link: ""},
+        {id: 8, word: "автомобиль", link: ""},
+        {id: 9, word: "автомобиль", link: ""},
+        {id: 10, word: "автомобиль", link: ""},
+        {id: 12, word: "автомобиль", link: ""},
+        {id: 13, word: "автомобиль", link: ""},
+        {id: 14, word: "автомобиль", link: ""},
+        {id: 15, word: "автомобиль", link: ""},
     ];
 
-    const [symbols, setSymbols] = useState("");
-    function search(){
-        // const [wordSplit, setWordSplit] = useState("")
-        setSymbols(element.value.toLowerCase())
-        // alert(element.value.toLowerCase())
-        wordList.forEach((word) =>{
-            word.word.startsWith(symbols.toLowerCase(), 1)?alert("yes"):alert("no")
-            // alert(wrd[0])
-        })
-    }
-    // const finder = wordList.map(word =>
-    //     // <div className={s.Find} key={word.id}>{(word.word.toString()).startsWith() ? word:""}</div>
-    //     // <div>asd</div>
-    // )
-
+    const [symbol, setSymbol] = useState('');
+    const filteredSearch = wordList.filter(word => {
+        return word.word.toLowerCase().includes(symbol.toLowerCase())
+    })
+    const finder = filteredSearch.map(word =>
+            <motion.div key={word.id} className={s.Find} initial={{scale:0.8, opacity:80}} animate={{scale:1, opacity:100}}>{word.word}</motion.div>
+    )
 
     return (
         <motion.div className={s.SearchBoard}
@@ -47,29 +42,15 @@ function SearchBoard(props) {
                     animate={{display: props.display, scale: props.scale + 0.2}}
                     transition={{duration: 0.1}}>
             <div className={s.Close} onClick={props.func}></div>
-            <input id="search" onInput={search} type="text" className={s.SearchLine}/>
-            {/*{finder}*/}
+
+            <div className={s.divSearchLine}>
+                <input className={s.SearchLine} id="search" onInput={(inputSymbol) => setSymbol(inputSymbol.target.value)} type="text" placeholder="Введите запрос"/>
+            </div>
+            <div className={s.divSearchResults}>
+                <div className={s.searchResults}>{finder}</div>
+            </div>
         </motion.div>
     );
 }
 
 export default SearchBoard;
-
-//animate={props.isVisible? show : hide}
-// const show = {
-//     opacity: 1,
-//     display: "block"
-// };
-//
-// const hide = {
-//     opacity: 0,
-//     transitionEnd: {
-//         display: "none"
-//     }
-// };
-
-// words.map(wrd=> {
-//         // alert(wrd.word.toLowerCase());
-//
-//     }
-// )
