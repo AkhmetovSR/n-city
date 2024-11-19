@@ -5,14 +5,15 @@ import Category from "../../resource/Category.png";
 import Heart from "../../resource/Heart.png";
 import Support from "../../resource/Support.png";
 import { motion } from "framer-motion";
+import {NavLink} from "react-router-dom";
 
 function Menu() {
     const section = [
-        {id: 1, img: Home, text: "Главная"},
-        {id: 2, img: List, text: "Список"},
-        {id: 3, img: Category, text: "Категории"},
-        {id: 4, img: Heart, text: "Избранное"},
-        {id: 5, img: Support, text: "Поддержка"}
+        {id: 1, img: Home, text: "Главная", link: "/"},
+        {id: 2, img: List, text: "Список", link: "/category"},
+        {id: 3, img: Category, text: "Категории", link: "/c"},
+        {id: 4, img: Heart, text: "Избранное", link: "/ca"},
+        {id: 5, img: Support, text: "Поддержка", link: "/cat"}
     ]
     function vibration(){
         if (window.navigator && window.navigator.vibrate) {
@@ -21,8 +22,10 @@ function Menu() {
     }
     const Sections = section.map(section =>
         <motion.div key={section.id} className={s.Section}>
-            <motion.div whileTap={{scale: 1.4}} onClick={vibration} className={s.OptionImg}><img className={s.Img} src={section.img} alt="section"/></motion.div>
-            <motion.div className={s.OptionText}>{section.text}</motion.div>
+            <NavLink to={section.link}>
+                <motion.div whileTap={{scale: 1.4}} onClick={vibration} className={s.OptionImg}><img className={s.Img} src={section.img} alt="section"/></motion.div>
+                <motion.div className={s.OptionText}>{section.text}</motion.div>
+            </NavLink>
         </motion.div>
     )
     return (

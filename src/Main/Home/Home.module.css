@@ -27,7 +27,7 @@
     /*position: absolute;*/
     /*border: 1px solid red;*/
     display: grid;
-    grid-auto-rows: 20% 50% auto;
+    grid-auto-rows: 20px 55% auto;
     /*align-content: start;*/
     /*justify-content: start;*/
     padding: 0;
@@ -35,11 +35,13 @@
     top: 4vh;
 }
 .Mountin{
+    /*width: 100%;*/
     /*border: 1px solid red;*/
 }
 .mountinImg{
-    margin-left: 12%;
-    width: 16%;
+    /*border: 1px solid red;*/
+    margin-left: 11%;
+    width: 70px;
     opacity: 20%;
 }
 /*.divCar{*/
@@ -58,7 +60,7 @@
 /*}*/
 .TitleCity{
     /*border: 1px solid red;*/
-    font-size: 60px;
+    font-size: 6vh;
     font-family: Klab;
     color: #7E7E7E;
     font-weight: lighter;
@@ -68,7 +70,7 @@
     position: absolute;
     width: 100%;
     /*border: 1px solid red;*/
-    top: 175px;
+    top: 17vh;
 
 }
 .SearchAll{
@@ -77,7 +79,7 @@
     font-weight: lighter;
     color: #7E7E7E;
     letter-spacing: 7px;
-    font-size: 18px;
+    font-size: 1.6vh;
     margin-left: 10%;
 }
 .Home {
@@ -95,7 +97,7 @@
     background-color: #232323;
     position: absolute;
     left: 10vw;
-    top: 38vh;
+    top: 35vh;
     display: grid;
     grid-template-columns: 85% 15%;
 }
