@@ -1,5 +1,6 @@
 import s from  "./Main.module.css";
 import Home from "./Home/Home.jsx";
+import Menu from "./Menu/Menu.jsx";
 import {Route, Routes} from "react-router-dom";
 
 export default function Main() {
@@ -8,9 +9,8 @@ export default function Main() {
           <Routes>
               <Route path='/' element={<Home/>}/>
           {/*    /!*<Widgets/>*!/*/}
-          {/*    /!*<Menu/>*!/*/}
           </Routes>
-
+          <Menu/>
       </div>
   );
 }

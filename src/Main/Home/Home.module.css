@@ -27,7 +27,7 @@
     /*position: absolute;*/
     /*border: 1px solid red;*/
     display: grid;
-    grid-auto-rows: 22% auto;
+    grid-auto-rows: 20% 50% auto;
     /*align-content: start;*/
     /*justify-content: start;*/
     padding: 0;
@@ -39,7 +39,7 @@
 }
 .mountinImg{
     margin-left: 12%;
-    width: 14%;
+    width: 16%;
     opacity: 20%;
 }
 /*.divCar{*/

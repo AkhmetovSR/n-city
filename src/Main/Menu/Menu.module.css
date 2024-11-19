@@ -3,7 +3,7 @@
     height: 8vh;
     /*border: 1px solid red;*/
     position: absolute;
-    bottom: 4vh;
+    bottom: 10%;
     display: grid;
     justify-content: center;
     /*align-content: center;*/
