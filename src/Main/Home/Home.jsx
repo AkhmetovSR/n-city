@@ -38,7 +38,7 @@ export default function Home() {
                 <div className={s.SearchAll}>#НАЙДЕТСЯВСЕ</div>
             </div>
             <div className={s.Carousel}>
-                {/*<Carousel/>*/}
+                <Carousel/>
             </div>
             <div className={s.Search} onTouchStart={openSearchBoard}>
                 <div className={s.SearchText}><Writer/></div>

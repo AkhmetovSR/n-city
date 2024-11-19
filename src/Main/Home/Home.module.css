@@ -40,7 +40,7 @@
 .mountinImg{
     margin-left: 12%;
     width: 14%;
-    opacity: 30%;
+    opacity: 20%;
 }
 /*.divCar{*/
 /*    !*border: 1px solid red;*!*/
@@ -68,7 +68,7 @@
     position: absolute;
     width: 100%;
     /*border: 1px solid red;*/
-    top: 190px;
+    top: 175px;
 
 }
 .SearchAll{
