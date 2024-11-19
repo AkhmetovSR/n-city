@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Klab";
+    src: url('../../resource/font/Klab.ttf');
+}
+@font-face {
+    font-family: "Lunasima";
+    src: url('../../resource/font/Lunasima-Regular.ttf');
+}
+.divSun{
+    /*border: 1px solid red;*/
+}
+.Sun{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: grid;
+    justify-items: center;
+    /*border: 1px solid red;*/
+    /*width: 40%;*/
+}
+.sunImg{
+    width: 24px;
+}
+.TitleAll{
+    position: absolute;
+    width: 100%;
+    /*position: absolute;*/
+    /*border: 1px solid red;*/
+    display: grid;
+    grid-auto-rows: 22% auto;
+    /*align-content: start;*/
+    /*justify-content: start;*/
+    padding: 0;
+    /*left: 10vw;*/
+    top: 4vh;
+}
+.Mountin{
+    /*border: 1px solid red;*/
+}
+.mountinImg{
+    margin-left: 12%;
+    width: 14%;
+    opacity: 30%;
+}
+/*.divCar{*/
+/*    !*border: 1px solid red;*!*/
+/*    !*width: 10px;*!*/
+/*    !*height: 10px;*!*/
+/*    !*background-color: #646464;*!*/
+/*    position: absolute;*/
+/*    margin-left: 12%;*/
+/*    top: 19%;*/
+/*}*/
+/*.Car{*/
+/*    !*border: 1px solid red;*!*/
+/*    width: 35px;*/
+/*    padding-top: 2%;*/
+/*}*/
+.TitleCity{
+    /*border: 1px solid red;*/
+    font-size: 60px;
+    font-family: Klab;
+    color: #7E7E7E;
+    font-weight: lighter;
+    margin-left: 10%;
+}
+.Carousel{
+    position: absolute;
+    width: 100%;
+    /*border: 1px solid red;*/
+    top: 190px;
+
+}
+.SearchAll{
+    /*border: 1px solid red;*/
+    font-family: Lunasima;
+    font-weight: lighter;
+    color: #7E7E7E;
+    letter-spacing: 7px;
+    font-size: 18px;
+    margin-left: 10%;
+}
+.Home {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1f1f1f;
+    position: absolute;
+    overflow: hidden;
+}
+.Search{
+    width: 80vw;
+    height: 6vh;
+    /*border: 1px solid red;*/
+    border-radius: 50px;
+    background-color: #232323;
+    position: absolute;
+    left: 10vw;
+    top: 38vh;
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+.SearchText{
+    /*border: 1px solid green;*/
+    display: grid;
+    align-content: center;
+}
+.SearchIcon{
+    /*border: 1px solid green;*/
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    padding-right: 10px;
+}
+.searchImg{
+    width: 80%;
+}
