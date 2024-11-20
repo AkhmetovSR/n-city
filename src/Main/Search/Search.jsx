@@ -1,15 +1,22 @@
-import s from  "./SearchBoard.module.css";
-import {motion} from "framer-motion";
-import { inView } from "framer-motion"
+import s from "./Search.module.css";
+import {NavLink, Route, Routes} from "react-router-dom";
+import Home from "../Home/Home";
+import Category from "../Category/Category";
+import Menu from "../Menu/Menu";
+import {inView, motion} from "framer-motion";
 import {useState} from "react";
 
-function SearchBoard(props) {
+export default function Search() {
     const searchLine = document.getElementById("search");
     inView(searchLine, () => {
-        if (props.display === "block"){
-            setTimeout(() => {searchLine.focus()}, 110)
-        }
+        // if (props.ioSearch === "open"){
+        //     setTimeout(() => {searchLine.focus()}, 2000)
+            setTimeout(() => {searchLine.click()}, 10000)
+        // }
+        alert("видно")
+        // searchLine.focus()
     });
+
 
     const wordList = [
         {id: 1, word: "Автосервис", link: ""},
@@ -32,20 +39,17 @@ function SearchBoard(props) {
     const filteredSearch = wordList.filter(word => {
         return word.word.toLowerCase().includes(symbol.toLowerCase())
     })
-    const finder = filteredSearch.map(word =>
-            <motion.div key={word.id} id={word.id} className={s.Find} onClick={openClick} animate={num === word.id ? {width: 300, zIndex:1, height: 500, position: "fixed", top: 0} : {scale:1, zIndex:0, position: "relative"}}>{word.word}</motion.div>
-    )
+
     function openClick(elem){
         setNum(Number(elem.target.id))
     }
+    const finder = filteredSearch.map(word =>
+        <motion.div key={word.id} id={word.id} className={s.Find} onClick={openClick} animate={num === word.id ? {width: 300, zIndex:1, height: 500, position: "fixed", top: 0} : {scale:1, zIndex:0, position: "relative"}}>{word.word}</motion.div>
+    )
 
     return (
-        <motion.div className={s.SearchBoard}
-                    initial={{display: props.display, scale: props.scale - 0.2}}
-                    animate={{display: props.display, scale: props.scale + 0.2}}
-                    transition={{duration: 0.1}}>
-            <div className={s.Close} onClick={props.func}></div>
-
+        <motion.div className={s.Search} initial={{opacity:0}} animate={{opacity:100}}>
+            <NavLink to="/" className={s.Close}></NavLink>
             <div className={s.divSearchLine}>
                 <input className={s.SearchLine} id="search" onInput={(inputSymbol) => setSymbol(inputSymbol.target.value)} type="text" placeholder="Введите запрос"/>
             </div>
@@ -55,5 +59,3 @@ function SearchBoard(props) {
         </motion.div>
     );
 }
-
-export default SearchBoard;

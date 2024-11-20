@@ -7,6 +7,12 @@
     display: grid;
     justify-content: center;
     /*align-content: center;*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    user-select: none;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    -webkit-user-drag: none;
 }
 .Options{
     width: 80vw;
@@ -25,11 +31,11 @@
     color: #7E7E7E;
     text-align: center;
 }
-.Section{
+.Option{
     display: grid;
     grid-auto-rows: 65% 35%;
-    /*align-content: center;*/
-    /*justify-items: center;*/
+    user-select: none;
+    text-decoration: none;
 }
 .OptionImg{
     display: grid;

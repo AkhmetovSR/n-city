@@ -8,6 +8,7 @@ import {useState} from "react";
 import Writer from "../Writer/Writer.jsx";
 import searchIcon from "../../resource/searchIcon.webp";
 import SearchBoard from "../SearchBoard/SearchBoard.jsx";
+import {NavLink} from "react-router-dom";
 
 export default function Home() {
     //------------------------------------------Вращение солнышка--------------------------------------------------------------
@@ -16,6 +17,7 @@ export default function Home() {
     //-------------------------------------------------------------------------------------------------------------------------
     const [scale, setScale] = useState(1);
     const [display, setDisplay] = useState("none");
+
     function openSearchBoard(){
         setScale(0.8);
         setDisplay("block")
@@ -31,8 +33,9 @@ export default function Home() {
             </div>
             <div className={s.TitleAll}>
                 <div className={s.Mountin}>
-                    <img src={Mountin} className={s.mountinImg}/>
-                    {/*<motion.div className={s.divCar} initial={{opacity:60}} animate={{x:150, opacity: 0}} transition={{duration:7, repeat: 10}}><img src={Car} className={s.Car}/></motion.div>*/}
+                    <img src={Mountin} className={s.mountinImg} alt='forest'/>
+                    <div className={s.Snow}></div>
+                    {/*<motion.div className={s.divCar} initial={{opacity:100}} animate={{x:50, opacity:0}} transition={{duration:5, repeat: 10}}><img src={Car} className={s.Car} alt='car'/></motion.div>*/}
                 </div>
                 <div className={s.TitleCity}>НЯГАНЬ</div>
                 <div className={s.SearchAll}>#НАЙДЕТСЯВСЕ</div>
@@ -40,11 +43,14 @@ export default function Home() {
             <div className={s.Carousel}>
                 <Carousel/>
             </div>
-            <div className={s.Search} onTouchStart={openSearchBoard}>
-                <div className={s.SearchText}><Writer/></div>
-                <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>
-            </div>
-            <SearchBoard display={display} scale={scale} func={closeSearchBoard}/>
+            {/*<div className={s.Search} onTouchStart={openSearchBoard}>*/}
+            <motion.div>
+                <NavLink to='/search' className={s.Search}>
+                    <div className={s.SearchText}><Writer/></div>
+                    <div className={s.SearchIcon}><img className={s.searchImg} src={searchIcon} alt="search"/></div>
+                </NavLink>
+            </motion.div>
+            {/*<SearchBoard display={display} scale={scale} func={closeSearchBoard}/>*/}
         </motion.div>
     );
 }

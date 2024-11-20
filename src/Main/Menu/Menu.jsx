@@ -21,12 +21,10 @@ function Menu() {
         }
     }
     const Sections = section.map(section =>
-        <motion.div key={section.id} className={s.Section}>
-            <NavLink to={section.link}>
-                <motion.div whileTap={{scale: 1.4}} onClick={vibration} className={s.OptionImg}><img className={s.Img} src={section.img} alt="section"/></motion.div>
+            <NavLink key={section.id} to={section.link} onClick={vibration} className={s.Option}>
+                <motion.div whileTap={{scale: 1.4}} className={s.OptionImg}><img className={s.Img} src={section.img} alt="section"/></motion.div>
                 <motion.div className={s.OptionText}>{section.text}</motion.div>
             </NavLink>
-        </motion.div>
     )
     return (
         <div className={s.Menu}>
