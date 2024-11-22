@@ -34,14 +34,7 @@ export default function Search() {
     const filteredSearch = wordList.filter(word => {
         return word.word.toLowerCase().includes(symbol.toLowerCase())
     })
-    const [height, setHeight] = useState()
-    function open(){
-        setHeight(1000)
-    }
-    // const [num, setNum] = useState(0)
-    // function openClick(elem){
-    //     setNum(Number(elem.target.id))
-    // }
+
     const finder = filteredSearch.map(word =>
         <motion.div key={word.id} id={word.id} className={s.Find}>{word.word}</motion.div>
     )
