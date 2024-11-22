@@ -1,58 +1,66 @@
-.Search{
+.SearchPage{
     width: 100vw;
     height: 100vh;
     background-color: #171717;
     /*opacity: 10%;*/
     position: absolute;
     z-index: 1;
-}
-.SearchBoard{
-    width: 100vw;
-    height: 100vh;
-    background-color: #171717;
-    position: relative;
-    /*bottom: 0;*/
-    opacity: 95%;
     /*border: 1px solid red;*/
-    /*width: 99vw;*/
+    display: grid;
+    grid-auto-rows: 10% 70%;
 }
-.divSearchLine{
+.Search{
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     top: 30px;
     /*border: 1px solid green;*/
     height: 10vh;
     display: grid;
-    justify-items: center;
+    grid-template-columns: 90% 10%;
+    justify-content: center;
     align-content: center;
 }
+.divSearchline{
+    /*border: 1px solid blue;*/
+    display: grid;
+    justify-items: right;
+}
+.divClose{
+    /*border: 1px solid blue;*/
+    display: grid;
+    /*align-content: center;*/
+    justify-content: center;
+}
 .SearchLine{
-    width: 70%;
-    height: 6.5vh;
+    width: 80%;
+    height: 6vh;
     border-radius: 50px;
     background-color: #232323;
     display: grid;
-    grid-template-columns: 85% 15%;
+    /*grid-template-columns: 85% 15%;*/
     color: white;
     font-size: 25px;
     outline: none;
     /*border: 1px solid red;*/
+
+
     border: 0;
     padding-left: 5vw;
     padding-right: 5vw;
 }
 .Close{
-    position: absolute;
-    right: 3vw;
-    top: 3vw;
+    /*position: absolute;*/
+    /*right: 3vw;*/
+    /*top: 3vw;*/
     width: 20px;
     height: 20px;
     background-color: rgba(255, 0, 0, 0.3);
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    /*border: 1px solid red;*/
 }
 .divSearchResults{
     height: 70vh;
-    position: absolute;
+    /*position: absolute;*/
     top: 120px;
     width: 100%;
     /*border: 1px solid green;*/
@@ -61,7 +69,7 @@
 }
 .searchResults{
     height: 100%;
-    width: 85%;
+    width: 80%;
     /*border: 1px solid red;*/
     display: grid;
     /*justify-items: center;*/
@@ -69,15 +77,15 @@
     overflow-y: scroll;
 }
 .searchResults::-webkit-scrollbar {
-    width: 2px;
+    width: 1px;
 }
 .searchResults::-webkit-scrollbar-track {
-    background-color: #3a3a3a;
+    background-color: #646464;
     border-radius: 50px;
 }
 .searchResults::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background: #949494;
+    background: #313131;
 }
 .Find{
     color: white;
@@ -90,4 +98,5 @@
     height: 40px;
     width: 90%;
     padding-left: 15px;
+    font-size: 120%;
 }

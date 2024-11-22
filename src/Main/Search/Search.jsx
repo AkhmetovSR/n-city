@@ -4,19 +4,14 @@ import Home from "../Home/Home";
 import Category from "../Category/Category";
 import Menu from "../Menu/Menu";
 import {inView, motion} from "framer-motion";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function Search() {
-    const searchLine = document.getElementById("search");
-    inView(searchLine, () => {
-        // if (props.ioSearch === "open"){
-        //     setTimeout(() => {searchLine.focus()}, 2000)
-            setTimeout(() => {searchLine.click()}, 10000)
-        // }
-        alert("видно")
-        // searchLine.focus()
-    });
-
+    useEffect(() => {
+        const searchLine = document.getElementById("search");
+        // setTimeout(() => {searchLine.focus()}, 150)
+        searchLine.focus()
+    })
 
     const wordList = [
         {id: 1, word: "Автосервис", link: ""},
@@ -34,24 +29,32 @@ export default function Search() {
         {id: 14, word: "автомобиль", link: ""},
         {id: 15, word: "автомобиль", link: ""},
     ];
-    const [num, setNum] = useState(0)
+
     const [symbol, setSymbol] = useState('');
     const filteredSearch = wordList.filter(word => {
         return word.word.toLowerCase().includes(symbol.toLowerCase())
     })
-
-    function openClick(elem){
-        setNum(Number(elem.target.id))
+    const [height, setHeight] = useState()
+    function open(){
+        setHeight(1000)
     }
+    // const [num, setNum] = useState(0)
+    // function openClick(elem){
+    //     setNum(Number(elem.target.id))
+    // }
     const finder = filteredSearch.map(word =>
-        <motion.div key={word.id} id={word.id} className={s.Find} onClick={openClick} animate={num === word.id ? {width: 300, zIndex:1, height: 500, position: "fixed", top: 0} : {scale:1, zIndex:0, position: "relative"}}>{word.word}</motion.div>
+        <motion.div key={word.id} id={word.id} className={s.Find}>{word.word}</motion.div>
     )
 
     return (
-        <motion.div className={s.Search} initial={{opacity:0}} animate={{opacity:100}}>
-            <NavLink to="/" className={s.Close}></NavLink>
-            <div className={s.divSearchLine}>
-                <input className={s.SearchLine} id="search" onInput={(inputSymbol) => setSymbol(inputSymbol.target.value)} type="text" placeholder="Введите запрос"/>
+        <motion.div className={s.SearchPage} initial={{opacity:0}} animate={{opacity:100}} transition={{delay:1}}>
+            <div className={s.Search}>
+                <div className={s.divSearchline}>
+                    <input className={s.SearchLine} id="search" onInput={(inputSymbol) => setSymbol(inputSymbol.target.value)} type="text" placeholder="Введите запрос"/>
+                </div>
+                <NavLink to="/" className={s.divClose}>
+                    <div  className={s.Close}></div>
+                </NavLink>
             </div>
             <div className={s.divSearchResults}>
                 <div className={s.searchResults}>{finder}</div>
