@@ -47,7 +47,7 @@ export default function Search() {
     )
 
     return (
-        <motion.div className={s.SearchPage} initial={{opacity:0}} animate={{opacity:100}} transition={{delay:1}}>
+        <motion.div className={s.SearchPage} initial={{opacity:0}} animate={{opacity:100}}>
             <div className={s.Search}>
                 <div className={s.divSearchline}>
                     <input className={s.SearchLine} id="search" onInput={(inputSymbol) => setSymbol(inputSymbol.target.value)} type="text" placeholder="Введите запрос"/>
