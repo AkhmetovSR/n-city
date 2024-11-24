@@ -14,9 +14,9 @@ export default function Main() {
         <div className={s.Main}>
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
-                    <Route path='/' element={<Home/>}/>
+                    <Route path='/'         element={<Home/>}/>
                     <Route path='/category' element={<Category/>}/>
-                    <Route path='/search' element={<Search/>}/>
+                    <Route path='/search'   element={<Search/>}/>
                     {/*<Route path='/search' element={<Search/>}/>*/}
                     {/*    /!*<Widgets/>*!/*/}
                 </Routes>

@@ -27,7 +27,7 @@ export default function Home() {
         setDisplay("none")
     }
     return (
-        <motion.div className={s.Home} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:2}}>
+        <motion.div className={s.Home} initial={{scale:0.8}} animate={{scale:1}} exit={{scale:0.8}} transition={{duration:0.1}}>
             <div className={s.divSun}>
                 <motion.div className={s.Sun} style={{rotate}}><img className={s.sunImg} src={Sun} alt="sun" onClick={closeSearchBoard}/></motion.div>
             </div>
