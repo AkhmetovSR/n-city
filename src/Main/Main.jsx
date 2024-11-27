@@ -3,6 +3,7 @@ import Home from "./Home/Home.jsx";
 import Category from "./Category/Category.jsx";
 import Menu from "./Menu/Menu.jsx";
 import Search from "./Search/Search.jsx";
+import Page from "./Page/Page.jsx";
 import {Route, Routes, useLocation} from "react-router-dom";
 // import {} from "framer-motion";
 // import {useState} from "react";
@@ -14,9 +15,10 @@ export default function Main() {
         <div className={s.Main}>
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
-                    <Route path='/'         element={<Home/>}/>
-                    <Route path='/category' element={<Category/>}/>
-                    <Route path='/search'   element={<Search/>}/>
+                    <Route path='/'             element={<Home/>}/>
+                    <Route path='/category'     element={<Category/>}/>
+                    <Route path='/search'       element={<Search/>}/>
+                    {/*<Route path='/search/page'  element={<Page/>}/>*/}
                     {/*<Route path='/search' element={<Search/>}/>*/}
                     {/*    /!*<Widgets/>*!/*/}
                 </Routes>

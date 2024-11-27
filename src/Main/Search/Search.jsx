@@ -25,6 +25,7 @@ export default function Search() {
                             <div  className={s.Close}></div>
                         </NavLink>
                     </div>
+                    <SearchResult symbol={symbol}/>
                 </motion.div>
             </AnimatePresence>
         </div>

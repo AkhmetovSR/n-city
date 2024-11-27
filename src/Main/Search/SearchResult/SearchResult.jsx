@@ -1,6 +1,6 @@
 import s from "./SearchResult.module.css";
 import {useState} from "react";
-import {motion} from "framer-motion";
+import {motion, AnimatePresence, LayoutGroup} from "framer-motion";
 
 export default function SearchResult(props) {
     const wordList = [
@@ -19,22 +19,104 @@ export default function SearchResult(props) {
         {id: 14, word: "автомобиль", link: ""},
         {id: 15, word: "автомобиль", link: ""},
     ];
+    const [index, setIndex] = useState(false);
 
-    const filteredSearch = wordList.filter(word => {
+    const cards = wordList.filter(word => {
         return word.word.toLowerCase().includes(props.symbol.toLowerCase())
     })
 
-    const [scale, setScale] = useState(1);
-    function toScale(){
-        setScale(0.6)
+    function Cards({cards, setIndex}) {
+        return (
+            <div className={s.mainDivCard}>
+                {cards.map((card, i) => (
+                    <div key={card.id} className={s.divWord}>
+                        <motion.div transition={{duration: 0.3, ease: "easeInOut"}} onClick={() => {setIndex(i);}} layoutId={card.id} className={s.Word}>
+                            {card.word}
+                        </motion.div>
+                    </div>
+                ))}
+            </div>
+        );
     }
 
-    const finder = filteredSearch.map(word =>
-        <motion.div key={word.id} id={word.id} className={s.Find} animate={{scale:scale}} onClick={toScale}>{word.word}</motion.div>
-    )
+    function ModalCard({ index, cards }) {
+        return (
+            /* Container */
+            <motion.div id={cards[index].id} // Раскрывающаяся карточка
+                style={{
+                    position: "fixed",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    left: "50%",
+                    display: "flex",
+                    width: "fit-content",
+                    height: "fit-content",
+                    justifyContent: "center",
+                    justifySelf: "center",
+                    alignContent: "center",
+                }}
+            >
+                {/* Card */}
+                <motion.div transition={{type: "spring", stiffness: 200, damping: 20, duration: 0.3, ease: "easeInOut"}} layoutId={cards[index].id} className={s.LayoutID}>
+                    {index !== false && (
+                        <motion.div exit={{ opacity: 0 }} transition={{duration: 0.3, ease: "easeInOut",}}>
+                            {/*<p className={s.Title}>*/}
+                                {cards[index].word}
+                            {/*</p>*/}
+                        </motion.div>
+                    )}
+                </motion.div>
+            </motion.div>
+        );
+    }
+
+    // const finder = filteredSearch.map(word =>
+    //     <motion.div key={word.id} id={word.id} className={s.Find} initial={{scale: 1.2, opacity: 0}}
+    //                 animate={{scale: 1, opacity: 1}} exit={{scale: 1.2, opacity: 0}}
+    //                 transition={{duration: 0.1}}>{word.word}</motion.div>
+    // )
     return (
-        <motion.div className={s.SearchResult}>
-            {finder}
-        </motion.div>
+        <>
+            {/*<div*/}
+            {/*    // style={{*/}
+            {/*    //     height: "100vh",*/}
+            {/*    // }}*/}
+            {/*    // className={`flex h-full justify-center content-center bg-black`}*/}
+            {/*    className={s.Cards}*/}
+            {/*>*/}
+                <LayoutGroup>
+                    <AnimatePresence>
+                        <Cards index={index} setIndex={setIndex} cards={cards} />
+                        {index !== false && (
+                            <motion.div
+                                className={s.Back}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 0.8 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                // key="overlay"
+                                style={{
+                                    // backgroundColor: "rgba(16,16,16,0.45)",
+                                    // width: "100vw",
+                                    // height: "100vh",
+                                    // position: "fixed",
+                                }}
+                                onClick={() => {
+                                    setIndex(false);
+                                }}
+                            />
+                        )}
+
+                        {index !== false && (
+                            <ModalCard
+                                key="singlecard"
+                                index={index}
+                                cards={cards}
+                                // setIndex={setIndex}
+                            />
+                        )}
+                    </AnimatePresence>
+                </LayoutGroup>
+            {/*</div>*/}
+        </>
     );
 }
