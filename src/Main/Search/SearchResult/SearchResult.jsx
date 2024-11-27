@@ -30,7 +30,7 @@ export default function SearchResult(props) {
             <div className={s.mainDivCard}>
                 {cards.map((card, i) => (
                     <div key={card.id} className={s.divWord}>
-                        <motion.div transition={{duration: 0.3, ease: "easeInOut"}} onClick={() => {setIndex(i);}} layoutId={card.id} className={s.Word}>
+                        <motion.div transition={{duration: 0.3, ease: "easeInOut"}} onClick={() => {setIndex(i)}} layoutId={card.id} className={s.Word}>
                             {card.word}
                         </motion.div>
                     </div>
@@ -42,7 +42,7 @@ export default function SearchResult(props) {
     function ModalCard({ index, cards }) {
         return (
             /* Container */
-            <motion.div id={cards[index].id} // Раскрывающаяся карточка
+            <motion.div id={cards[index].id} className={s.OpenCard} // Раскрывающаяся карточка
                 style={{
                     position: "fixed",
                     top: "50%",
