@@ -1,26 +1,27 @@
-.SearchResult{
-    /*border: 1px solid red;*/
-    overflow: scroll;
-    display: grid;
-    justify-items: center;
-}
-.SearchWord{
+/*.SearchResult{*/
+/*    !*border: 1px solid red;*!*/
+/*    overflow: scroll;*/
+/*    display: grid;*/
+/*    justify-items: center;*/
+/*}*/
+/*.SearchWord{*/
 
-}
+/*}*/
 
-.Find{
-    color: white;
-    background-color: #484848;
-    border-radius: 15px;
-    display: grid;
-    /*text-align: center;*/
-    align-content: center;
-    margin: 5px;
-    height: 40px;
-    width: 70%;
-    padding-left: 15px;
-    font-size: 120%;
-}
+/*.Find{*/
+/*    border: 1px solid red;*/
+/*    color: white;*/
+/*    background-color: #484848;*/
+/*    border-radius: 15px;*/
+/*    display: grid;*/
+/*    !*text-align: center;*!*/
+/*    align-content: center;*/
+/*    margin: 5px;*/
+/*    height: 40px;*/
+/*    width: 70%;*/
+/*    padding-left: 15px;*/
+/*    font-size: 120%;*/
+/*}*/
 .divWord{
     /*border: 1px solid green;*/
     margin-bottom: 5px;
@@ -34,13 +35,13 @@
     align-content: start;
     justify-content: center;
 }
-.Cards{
-    border: 1px solid red;
-    background-color: #1f1f1f;
-    display: grid;
-    justify-content: center;
-    align-content: start;
-}
+/*.Cards{*/
+/*    border: 1px solid red;*/
+/*    background-color: #1f1f1f;*/
+/*    display: grid;*/
+/*    justify-content: center;*/
+/*    align-content: start;*/
+/*}*/
 .Word{
     width: 65vw;
     background-color: #7E7E7E;
@@ -54,7 +55,7 @@
     color: white;
     /*height: 4vh;*/
     width: 85vw;
-    height: 80vh;
+    height: 85vh;
     border-radius: 20px;
     background-color: rgb(131, 131, 131);
     text-align: center;

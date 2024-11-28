@@ -29,15 +29,19 @@ export default function SearchResult(props) {
     })
 
     const [index, setIndex] = useState(false);
-    function closeCard(){setIndex(false)}
+    function closeCard() {setIndex(false)}
+    function closeKey(){
+        document.getElementById('mainDivCard').focus()
+    }
 
+    //При клике на слово: если клавиатура открыта или похожее условие, то сделать задержку и сменить useState
     function Cards({cards, setIndex}) {
         return (
-            <div className={s.mainDivCard}>
+            <div className={s.mainDivCard} id='mainDivCard'>
                 {cards.map((card, i) => (
-                    <div key={card.id} className={s.divWord}>
+                    <div key={card.id} className={s.divWord} >
                         <motion.div transition={{duration: 0.3, ease: "easeInOut"}} onClick={() => {setIndex(i)}} layoutId={card.id} className={s.Word}>
-                            <motion.div className={s.Name}>{card.word}</motion.div>
+                            <motion.div className={s.Name} onClick={closeKey}>{card.word}</motion.div>
                         </motion.div>
                     </div>
                 ))}
