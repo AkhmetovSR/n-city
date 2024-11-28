@@ -3,11 +3,12 @@
     height: 100vh;
     background-color: #171717;
     /*opacity: 10%;*/
-    position: absolute;
+    /*position: absolute;*/
     z-index: 1;
     /*border: 1px solid red;*/
     display: grid;
     grid-auto-rows: 10% 70%;
+    position: fixed;
 }
 .Search{
     width: 100%;

@@ -10,7 +10,8 @@ import SearchResult from "./SearchResult/SearchResult.jsx";
 export default function Search() {
     useEffect(() => {
         const searchLine = document.getElementById("search");
-        searchLine.focus()
+        setTimeout(() => {searchLine.focus()}, 120) //Задержка для плавности
+        // searchLine.focus()
     })
     const [symbol, setSymbol] = useState('');
     return (
